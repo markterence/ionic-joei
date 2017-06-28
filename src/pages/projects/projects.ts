@@ -15,15 +15,15 @@ import { STATIC } from '../../include/statics';
 })
 export class ProjectsPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,private apiService: ApiService) {
-
+    this.apiService.getProjectLists("3","24324234","!JJJJcheetah8888").subscribe(response => {
+      console.log(response.responseData); // Blog Data
+    })
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProjectsPage');
     console.log("asmkab");
-    this.apiService.getProjectLists("3","24324234","!JJJJcheetah8888").subscribe(response => {
-      console.log(response.responseData.feed.entries); // Blog Data
-    })
+
   }
 
 }
