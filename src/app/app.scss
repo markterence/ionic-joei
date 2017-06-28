@@ -14,3 +14,40 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+ion-avatar, ion-avatar img {
+
+  // max-width: 45px !important;
+  // max-height: 45px !important;
+  width:100% !important;
+  height : 100% !important;
+  max-width: 90px !important;  //any size
+  max-height: 90px !important; //any size
+  border-radius: 50%;
+}
+.avatar, .avatar img{
+  width: 60px;
+	height: 60px;
+  border-radius: 50%;
+}
+//
+// .item-profile{
+//   height: 120px;
+// }
+//
+// .avatar {
+//   position: relative;
+//   top: 16px;
+//   left: 16px;
+//   max-width: 40px;
+//   max-height: 40px;
+//   border-radius: 50%;
+//   overflow: hidden;
+//
+// }
+// .avatar_name{
+//
+// }
+// .avatar > img {
+//   max-width: 90px;
+// }

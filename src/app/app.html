@@ -1,12 +1,51 @@
 <ion-menu [content]="content">
 
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Pages</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <!-- <ion-header> -->
+    <!-- <ion-toolbar> -->
+
+      <!-- <ion-title>
+        <ion-avatar item-left>
+          <img src="assets/avatar/avatar.jpg" width="45px" height="45px">
+        </ion-avatar>Joei Espinosa
+        <br>
+        <small><small>
+          mjoei.joei@gmail.com
+        </small></small>
+      </ion-title> -->
+
+    <!-- </ion-toolbar> -->
+
+  <!-- </ion-header> -->
 
   <ion-content>
+    <div>
+      <!-- <ion-avatar item-left class="menu-avatar">
+          <img src="assets/avatar/avatar.jpg">
+      </ion-avatar> -->
+
+      <!-- vertical-align:middle;position:relative; -->
+      <div class="avatar" style="float:left;">
+        <img src="assets/avatar/avatar.jpg">
+      </div>
+      <span>asdasdas asdasdas asdasdas
+        <br>
+        <small>asdasdafasjilfkcnxiwdnb</small>
+      </span>
+      <!--  -->
+      <div>
+         divasdasdas asdasdas
+      </div>
+      <!-- <div class="item-profile">
+        <div class="avatar">
+          <img src="assets/avatar/avatar.jpg">
+        </div>
+        <div class="avatar_name">
+          Joe Bloggs
+        </div>
+      </div> -->
+    </div>
+
+
     <ion-list>
       <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}

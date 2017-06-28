@@ -6,6 +6,9 @@ import { MyApp } from './app.component';
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
+//Mark Terence
+import { ProjectsPage } from '../pages/projects/projects';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -15,7 +18,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HelloIonicPage,
     ItemDetailsPage,
-    ListPage
+    ListPage,
+    ProjectsPage
   ],
   imports: [
     BrowserModule,
@@ -26,7 +30,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HelloIonicPage,
     ItemDetailsPage,
-    ListPage
+    ListPage,
+    ProjectsPage
   ],
   providers: [
     StatusBar,
