@@ -31,7 +31,7 @@ export class ApiServiceProvider {
     //(this.makeDataUrl(user_id, device_id, session_key))
     //let url: string = this.useBaseUrl();
     let url = this.proxyfi(this.makeDataUrl(user_id, device_id, session_key));
-    return this.http.get(url, this.headerInjection()).map(this.extractData);
+    return this.http.get(url).map(this.extractData);
   }
 
   private extractData(res: Response){
@@ -41,7 +41,7 @@ export class ApiServiceProvider {
 
   public headerInjection() : RequestOptions{
     //let options = new
-     let headers = new Headers({ 'Origin': 'localhost:8100' });
+     let headers = new Headers({ 'Holy': 'Shit' });
      let options = new RequestOptions({ headers: headers });
      return options;
   }
