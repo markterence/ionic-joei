@@ -7,6 +7,7 @@ this generates a page
 #basic ionic tutorial 
 `https://taco.visualstudio.com/en-us/docs/tutorial-ionic2/`
 
+
 #creating providers
 `ionic g provider <provider_name>`
 The ionic CLI will create a new folder in the project ```src\provider\```  
