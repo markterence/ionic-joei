@@ -15,8 +15,9 @@ import {sprintf} from "sprintf-js";
 */
 @Injectable()
 export class ApiServiceProvider {
-  private SERVER_ADDRESS = 'https://api.github.com/users/';//http://192.168.1.112:8888/api/';
-  private PROXY = 'http://localhost/prox/?url=%s';
+  //'http://localhost/prox/mock-server.php';
+  private SERVER_ADDRESS = 'http://192.168.1.112:8888/api/';
+  private PROXY = 'http://192.168.1.106/prox/proxy.php?url=%s';
   private SERVER_TOKEN = '!JJJJcheetah8888';
 
   private PROJECT_ENDPOINT = this.SERVER_ADDRESS + 'projects/?user_id=%1$s&deviceid=%2$s&session_key=%3$s';
@@ -27,7 +28,8 @@ export class ApiServiceProvider {
 
   public getProjectLists(user_id:String, device_id: String, session_key: String){
     //(this.makeDataUrl(user_id, device_id, session_key))
-    let url: string = this.useBaseUrl();
+    //let url: string = this.useBaseUrl();
+    let url = this.proxyfi(this.makeDataUrl(user_id, device_id, session_key));
     return this.http.get(url, this.headerInjection()).map(this.extractData);
   }
 
@@ -45,8 +47,9 @@ export class ApiServiceProvider {
   public useBaseUrl(){
     return this.SERVER_ADDRESS;
   }
-  public proxyfi(url: String): string{
-    return sprintf(this.PROXY, url);
+  public proxyfi(url: string): string{
+    console.log(sprintf(this.PROXY, encodeURIComponent(url)));
+    return sprintf(this.PROXY, encodeURIComponent(url));
   }
   public makeDataUrl(user_id:String, device_id: String, session_key: String): string{
     return sprintf(this.PROJECT_ENDPOINT, user_id, device_id, session_key);

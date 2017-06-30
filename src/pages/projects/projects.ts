@@ -16,6 +16,8 @@ import 'rxjs/add/operator/map';
   templateUrl: 'projects.html',
 })
 export class ProjectsPage {
+  projectsDataLists: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public api: ApiServiceProvider) {
 
   }
@@ -26,8 +28,9 @@ export class ProjectsPage {
   }
 
   getProjects(){
-    this.api.getProjectLists("3","1235","2145").subscribe(res  => {
-      console.log("E:"+ res.responseData);
+    this.api.getProjectLists("5","123","e1ed60c899b46e9cb0ea25be88145f17").subscribe(res  => {
+      console.log(res);
+      this.projectsDataLists = res.data;
     });
   }
 
