@@ -12,8 +12,10 @@ import { ProjectsPage } from '../pages/projects/projects';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { Http } from '@angular/http';
-import { ApiService } from '../services/api-service';
+//Included by `ionic g provider` command
+import { HttpModule, JsonpModule } from '@angular/http';
+import { ApiServiceProvider } from '../providers/api-service/api-service';
+ 
 @NgModule({
   declarations: [
     MyApp,
@@ -24,7 +26,7 @@ import { ApiService } from '../services/api-service';
   ],
   imports: [
     BrowserModule,
-
+    HttpModule, JsonpModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
@@ -37,8 +39,10 @@ import { ApiService } from '../services/api-service';
   ],
   providers: [
     StatusBar,
-    SplashScreen,ApiService,Http,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    SplashScreen,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    //provided by `ionic g provider` command
+    ApiServiceProvider
   ]
 })
 export class AppModule {}
