@@ -18,7 +18,7 @@ export class ApiServiceProvider {
   //'http://localhost/prox/mock-server.php';
   private SERVER_ADDRESS = 'http://192.168.1.112:8888/api/';
   //This is the Proxy Script running on PHP local server (this will bypass CORS);
-  private PROXY = 'http://192.168.1.106/prox/proxy.php?url=%s';
+  private PROXY = 'http://192.168.1.106/proxy-joei/proxy.php?url=%s';
   private SERVER_TOKEN = '!JJJJcheetah8888';
 
   private PROJECT_ENDPOINT = this.SERVER_ADDRESS + 'projects/?user_id=%1$s&deviceid=%2$s&session_key=%3$s';
