@@ -8,7 +8,7 @@ import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
 //Mark Terence
 import { ProjectsPage } from '../pages/projects/projects';
-
+import { ProjectDetailsPage } from '../pages/project-details/project-details';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -22,7 +22,8 @@ import { ApiServiceProvider } from '../providers/api-service/api-service';
     HelloIonicPage,
     ItemDetailsPage,
     ListPage,
-    ProjectsPage
+    ProjectsPage,
+    ProjectDetailsPage
   ],
   imports: [
     BrowserModule,
@@ -35,7 +36,8 @@ import { ApiServiceProvider } from '../providers/api-service/api-service';
     HelloIonicPage,
     ItemDetailsPage,
     ListPage,
-    ProjectsPage
+    ProjectsPage,
+    ProjectDetailsPage
   ],
   providers: [
     StatusBar,
