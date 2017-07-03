@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions  } from '@angular/http';
+import {Observable} from 'rxjs/observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise'; //from  taco.visualstudio.co
 
@@ -16,10 +17,10 @@ import {sprintf} from "sprintf-js";
 @Injectable()
 export class ApiServiceProvider {
   //'http://localhost/prox/mock-server.php';
-  private SERVER_ADDRESS = 'http://192.168.1.112:8888/api/';
-  //This is the Proxy Script running on PHP local server (this will bypass CORS);
-  private PROXY = 'http://192.168.1.106/proxy-joei/proxy.php?url=%s';
-  private SERVER_TOKEN = '!JJJJcheetah8888';
+  private SERVER_ADDRESS = 'http://192.168.1.105:8888/api/';
+  //This is the Proxy Script running on PHP local server (allows CORS);
+  private PROXY = 'http://192.168.1.101/proxy-joei/proxy.php?url=%s';
+  //private SERVER_TOKEN = '!JJJJcheetah8888';
 
   private PROJECT_ENDPOINT = this.SERVER_ADDRESS + 'projects/?user_id=%1$s&deviceid=%2$s&session_key=%3$s';
   constructor(public http: Http) {
@@ -27,7 +28,8 @@ export class ApiServiceProvider {
     console.log('Hello ApiServiceProvider Provider');
   }
 
-  public getProjectLists(user_id:String, device_id: String, session_key: String){
+  public getProjectLists(user_id:String, device_id: String, session_key: String)
+    :Observable<any>{
     //(this.makeDataUrl(user_id, device_id, session_key))
     //let url: string = this.useBaseUrl();
     let url = this.proxyfi(this.makeDataUrl(user_id, device_id, session_key));
