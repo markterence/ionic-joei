@@ -15,5 +15,11 @@ this generates a page
 The ionic CLI will create a new folder in the project ```src\provider\```   
 
 # Dealing with CORS
-I used a proxy script written in PHP to read the api outside the domain.
+During testing, Javascript is not allowed to consume web page served from different origin.  
+So I used a proxy script written in PHP to read the api outside the domain.  
+``https://gist.github.com/iovar/9091078``
 
+proxy.php -->
+|Header # | Header2 # |
+|--- |:---:|
+|ragsekemnmn|hello aewaskj|
