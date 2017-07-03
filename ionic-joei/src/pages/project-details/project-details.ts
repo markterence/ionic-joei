@@ -12,9 +12,10 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'project-details.html',
 })
 export class ProjectDetailsPage {
-  selectedItem: any;
+  public selectedItem: any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.selectedItem = navParams.get('item');
+    this.selectedItem = navParams.get('project');
+    console.log("SelectedItem: "+ JSON.stringify(this.selectedItem));
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProjectDetailsPage');

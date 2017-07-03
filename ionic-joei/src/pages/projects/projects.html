@@ -20,7 +20,7 @@
 
   <p>this is projects page add projects lists here</p>
   <ion-list>
-    <button ion-item *ngFor="let project of projectsDataLists">
+    <button ion-item *ngFor="let project of projectsDataLists" (click)="itemTapped($event, project)">
       <h2>{{project.project_name}}</h2>
       <small>{{project.description}}</small>
       <ion-icon name="arrow-forward" item-right></ion-icon>

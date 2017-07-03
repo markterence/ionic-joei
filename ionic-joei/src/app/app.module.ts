@@ -15,7 +15,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 //Included by `ionic g provider` command
 import { HttpModule, JsonpModule } from '@angular/http';
 import { ApiServiceProvider } from '../providers/api-service/api-service';
- 
+
+
 @NgModule({
   declarations: [
     MyApp,

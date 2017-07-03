@@ -4,6 +4,10 @@ import { NavController, NavParams } from 'ionic-angular';
 
 //import Api Service Providers
 import {ApiServiceProvider} from '../../providers/api-service/api-service';
+import {ProjectDetailsPage} from '../project-details/project-details';
+import { JLoadingBar } from '../../include/loading-bar';
+import { LoadingController } from 'ionic-angular';
+
 /**
  * Generated class for the ProjectsPage page.
  *
@@ -17,21 +21,38 @@ import 'rxjs/add/operator/map';
 })
 export class ProjectsPage {
   projectsDataLists: any;
+  jLoadingBar: JLoadingBar;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public api: ApiServiceProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, 
+    public api: ApiServiceProvider,
+    public loadingCtrl: LoadingController) {
 
+      this.jLoadingBar = new JLoadingBar(loadingCtrl)
   }
+   
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProjectsPage');
+    this.jLoadingBar.showLoadingBar("Please Wait....");
     this.getProjects();
+  }
+  
+  //Event
+  itemTapped(event, item) {
+    //console.log("Item Tapped:" + JSON.stringify(item));
+    this.navCtrl.push(ProjectDetailsPage, {
+      project: item
+    });
   }
 
   getProjects(){
-    this.api.getProjectLists("5","123","e1ed60c899b46e9cb0ea25be88145f17").subscribe(res  => {
-      console.log(res);
-      this.projectsDataLists = res.data;
-    });
+    this.api.getProjectLists("5","123","e1ed60c899b46e9cb0ea25be88145f17").subscribe(
+      res  => {
+        console.log(res);
+        this.projectsDataLists = res.data;
+        this.jLoadingBar.dismissLoadingBar();
+      }
+    );
   }
 
 }
