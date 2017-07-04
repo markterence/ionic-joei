@@ -1,0 +1,13 @@
+<!--
+  Generated template for the PopoverPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+  <div *ngFor="let popup_item of popup_items">
+  <button ion-item  (click)="showPage(popup_item.action)">
+  <ion-icon name="{{popup_item.icon}}" item-start></ion-icon>  
+  {{popup_item.title}}
+  </button>
+</div>
