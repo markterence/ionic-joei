@@ -5,7 +5,7 @@ import { NavController, NavParams } from 'ionic-angular';
 //import Api Service Providers
 import {ApiServiceProvider} from '../../providers/api-service/api-service';
 import {ProjectDetailsPage} from '../project-details/project-details';
-import { JLoadingBar } from '../../include/loading-bar';
+import { JLoadingBar, JPopOver} from '../../include/pop-up';
 import { LoadingController } from 'ionic-angular';
 
 /**
@@ -23,12 +23,13 @@ export class ProjectsPage {
   projectsDataLists: any;
   jLoadingBar: JLoadingBar;
 
+
   msg : any = "this is projects page add projects lists here";
   constructor(public navCtrl: NavController, public navParams: NavParams, 
     public api: ApiServiceProvider,
     public loadingCtrl: LoadingController) {
 
-      this.jLoadingBar = new JLoadingBar(loadingCtrl)
+      this.jLoadingBar = new JLoadingBar(loadingCtrl);
   }
    
 

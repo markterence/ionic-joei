@@ -18,7 +18,7 @@
 
 <ion-content padding>
 
-  <p>this is projects page add projects lists here</p>
+  <p>{{msg}}</p>
   <ion-list>
     <button ion-item *ngFor="let project of projectsDataLists" (click)="itemTapped($event, project)">
       <h2>{{project.project_name}}</h2>
