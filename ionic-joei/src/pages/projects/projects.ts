@@ -23,6 +23,7 @@ export class ProjectsPage {
   projectsDataLists: any;
   jLoadingBar: JLoadingBar;
 
+  msg : any = "this is projects page add projects lists here";
   constructor(public navCtrl: NavController, public navParams: NavParams, 
     public api: ApiServiceProvider,
     public loadingCtrl: LoadingController) {
@@ -51,6 +52,11 @@ export class ProjectsPage {
         console.log(res);
         this.projectsDataLists = res.data;
         this.jLoadingBar.dismissLoadingBar();
+        
+      },err => {
+        console.log("errror"+ JSON.stringify(err));
+        this.jLoadingBar.dismissLoadingBar();
+        this.msg = "Error Loading Projects";
       }
     );
   }
