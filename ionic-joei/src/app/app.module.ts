@@ -16,7 +16,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { ApiServiceProvider } from '../providers/api-service/api-service';
 
-
+import { PopoverPage } from '../pages/popover/popover';
+import { ProjectFormPage } from "../pages/project-form/project-form";
 @NgModule({
   declarations: [
     MyApp,
@@ -24,7 +25,9 @@ import { ApiServiceProvider } from '../providers/api-service/api-service';
     ItemDetailsPage,
     ListPage,
     ProjectsPage,
-    ProjectDetailsPage
+    ProjectDetailsPage,
+    PopoverPage,
+    ProjectFormPage
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,8 @@ import { ApiServiceProvider } from '../providers/api-service/api-service';
     ItemDetailsPage,
     ListPage,
     ProjectsPage,
-    ProjectDetailsPage
+    ProjectDetailsPage,
+    PopoverPage,ProjectFormPage
   ],
   providers: [
     StatusBar,
