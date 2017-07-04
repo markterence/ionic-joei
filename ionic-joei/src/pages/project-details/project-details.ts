@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ActionSheetController } from 'ionic-angular';
+import { NavController, NavParams, ActionSheetController,
+         PopoverController } from 'ionic-angular';
 
+import { JPopOver } from '../../include/pop-up';
+import { PopoverPage } from "../popover/popover";
 /**
  * Generated class for the ProjectDetailsPage page.
  *
@@ -13,14 +16,30 @@ import { NavController, NavParams, ActionSheetController } from 'ionic-angular';
 })
 export class ProjectDetailsPage {
   public selectedItem: any;
+  
+  jpopOver: JPopOver;
+
   constructor(public navCtrl: NavController, public navParams: NavParams,
-    public actionSheetCtrl: ActionSheetController) {
+    public actionSheetCtrl: ActionSheetController,
+    public popOverCtrl: PopoverController
+    ) {
+    
     this.selectedItem = navParams.get('project');
     console.log("SelectedItem: "+ JSON.stringify(this.selectedItem));
+
+    //initialize PopoverController
+    this.jpopOver = new JPopOver(popOverCtrl);  
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProjectDetailsPage');
   }
+  
+  openPopover(ev){
+    let pop = this.popOverCtrl.create(PopoverPage, {item: this.selectedItem}, {cssClass: 'ion-card'});
+    pop.present({
+      ev: ev
+    });
+  } 
 
   showActionSheet(){
      let actionSheet = this.actionSheetCtrl.create({
