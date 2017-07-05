@@ -1,8 +1,12 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,
+         ModalController,
+         ViewController } from 'ionic-angular';
 
 
 import { ProjectFormPage } from "../project-form/project-form";
+import { ProjectModalPage } from "../project-modal/project-modal";
+
 /**
  * Generated class for the PopoverPage page.
  *
@@ -20,7 +24,9 @@ export class PopoverPage {
 
   selectedItem:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    public modalCtrl: ModalController,
+    public viewCtrl: ViewController) {
     
     this.selectedItem = navParams.get("item");
     
@@ -33,7 +39,11 @@ export class PopoverPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad PopoverPage');
   }
-
+  
+  openModal(data){
+    let _modal = this.modalCtrl.create(ProjectModalPage, {data:data});
+    _modal.present();
+  }
   showPage(action){
     switch(action){
       case "delete":
@@ -42,9 +52,7 @@ export class PopoverPage {
         break;
       case "edit":
         console.log("ShowPageEdit:"+JSON.stringify(this.selectedItem));
-        this.navCtrl.push(ProjectFormPage, 
-          {data:this.selectedItem}
-          );
+        this.openModal(this.selectedItem);
         break;
       default:
         break;

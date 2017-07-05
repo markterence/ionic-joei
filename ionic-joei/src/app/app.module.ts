@@ -18,6 +18,9 @@ import { ApiServiceProvider } from '../providers/api-service/api-service';
 
 import { PopoverPage } from '../pages/popover/popover';
 import { ProjectFormPage } from "../pages/project-form/project-form";
+
+import { ProjectModalPage } from "../pages/project-modal/project-modal";
+
 @NgModule({
   declarations: [
     MyApp,
@@ -27,7 +30,8 @@ import { ProjectFormPage } from "../pages/project-form/project-form";
     ProjectsPage,
     ProjectDetailsPage,
     PopoverPage,
-    ProjectFormPage
+    ProjectFormPage,
+    ProjectModalPage
   ],
   imports: [
     BrowserModule,
@@ -42,7 +46,8 @@ import { ProjectFormPage } from "../pages/project-form/project-form";
     ListPage,
     ProjectsPage,
     ProjectDetailsPage,
-    PopoverPage,ProjectFormPage
+    PopoverPage,ProjectFormPage,
+    ProjectModalPage
   ],
   providers: [
     StatusBar,

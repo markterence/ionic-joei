@@ -25,10 +25,12 @@ export class ProjectsPage {
 
 
   msg : any = "this is projects page add projects lists here";
+
+
   constructor(public navCtrl: NavController, public navParams: NavParams, 
     public api: ApiServiceProvider,
     public loadingCtrl: LoadingController) {
-
+      
       this.jLoadingBar = new JLoadingBar(loadingCtrl);
   }
    

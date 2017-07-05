@@ -4,6 +4,8 @@ import { NavController, NavParams, ActionSheetController,
 
 import { JPopOver } from '../../include/pop-up';
 import { PopoverPage } from "../popover/popover";
+
+
 /**
  * Generated class for the ProjectDetailsPage page.
  *
@@ -12,7 +14,7 @@ import { PopoverPage } from "../popover/popover";
  */
 @Component({
   selector: 'page-project-details',
-  templateUrl: 'project-details.html',
+  templateUrl: 'project-details.html'
 })
 export class ProjectDetailsPage {
   public selectedItem: any;
@@ -36,10 +38,14 @@ export class ProjectDetailsPage {
   
   openPopover(ev){
     let pop = this.popOverCtrl.create(PopoverPage, {item: this.selectedItem}, {cssClass: 'ion-card'});
+    // pop.onDidDismiss(()=>{
+    //   //ev:ev;
+    // });
     pop.present({
       ev: ev
     });
   } 
+
 
   showActionSheet(){
      let actionSheet = this.actionSheetCtrl.create({
