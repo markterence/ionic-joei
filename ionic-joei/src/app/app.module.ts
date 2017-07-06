@@ -21,6 +21,8 @@ import { ProjectFormPage } from "../pages/project-form/project-form";
 
 import { ProjectModalPage } from "../pages/project-modal/project-modal";
 
+//Test
+import { JPopOver } from "../include/pop-up";
 @NgModule({
   declarations: [
     MyApp,
@@ -54,7 +56,9 @@ import { ProjectModalPage } from "../pages/project-modal/project-modal";
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     //provided by `ionic g provider` command
-    ApiServiceProvider
+    ApiServiceProvider,
+    
+    JPopOver
   ]
 })
 export class AppModule {}

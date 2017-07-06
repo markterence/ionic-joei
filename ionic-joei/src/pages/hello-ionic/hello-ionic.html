@@ -4,6 +4,13 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Hello Ionic</ion-title>
+
+     <ion-buttons end>
+      <button ion-button icon-only (click)="showHomePopOver($event)">
+        <ion-icon name="md-more"></ion-icon>
+      </button>
+    </ion-buttons>
+
   </ion-navbar>
 </ion-header>
 
@@ -21,5 +28,4 @@
   <p>
     <button ion-button color="primary" menuToggle>Toggle Menu</button>
   </p>
-
 </ion-content>

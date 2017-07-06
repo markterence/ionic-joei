@@ -1,4 +1,5 @@
 import { LoadingController, PopoverController } from 'ionic-angular';
+import { Injectable } from '@angular/core';
 
 export class JLoadingBar{
 
@@ -20,7 +21,7 @@ export class JLoadingBar{
 }
 
 
-
+@Injectable()
 export class JPopOver{
  
     private pop: any;
@@ -28,9 +29,11 @@ export class JPopOver{
 
     }
 
-    showPopover(component: any, data?:any, opts?:any){
+    showPopover(component: any, event, data?:any, opts?:any,){
         this.pop = this.popOverCtrl.create(component, data, opts);
-        this.pop.present();
+        this.pop.present(
+            {ev:event}
+        );
     }
 
     dismissPopover(){
