@@ -37,7 +37,8 @@ export class ProjectDetailsPage {
   }
   
   openPopover(ev){
-    let pop = this.popOverCtrl.create(PopoverPage, {item: this.selectedItem}, {cssClass: 'ion-card'});
+    //, {cssClass: 'ion-card'}
+    let pop = this.popOverCtrl.create(PopoverPage, {item: this.selectedItem});
     // pop.onDidDismiss(()=>{
     //   //ev:ev;
     // });

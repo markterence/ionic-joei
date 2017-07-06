@@ -19,14 +19,26 @@ export class JLoadingBar{
     }
 }
 
+
+
 export class JPopOver{
-    
+ 
+    private pop: any;
     constructor(public popOverCtrl: PopoverController){
 
     }
 
-    showPopover(component: any){
-        let pop = this.popOverCtrl.create(component);
-        pop.present();
+    showPopover(component: any, data?:any, opts?:any){
+        this.pop = this.popOverCtrl.create(component, data, opts);
+        this.pop.present();
     }
+
+    dismissPopover(){
+        this.pop.dismiss();
+    }
+}
+
+export class JModal{
+    private modal:any;
+ 
 }

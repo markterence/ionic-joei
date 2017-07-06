@@ -5,7 +5,7 @@ import { NavController, NavParams } from 'ionic-angular';
 //import Api Service Providers
 import {ApiServiceProvider} from '../../providers/api-service/api-service';
 import {ProjectDetailsPage} from '../project-details/project-details';
-import { JLoadingBar, JPopOver} from '../../include/pop-up';
+import { JLoadingBar } from '../../include/pop-up';
 import { LoadingController } from 'ionic-angular';
 
 /**

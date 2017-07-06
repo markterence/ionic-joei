@@ -40,10 +40,12 @@ export class PopoverPage {
     console.log('ionViewDidLoad PopoverPage');
   }
   
+  //Show ProjectModal Page
   openModal(data){
     let _modal = this.modalCtrl.create(ProjectModalPage, {data:data});
     _modal.present();
   }
+
   showPage(action){
     switch(action){
       case "delete":
