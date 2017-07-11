@@ -1,6 +1,7 @@
-import { LoadingController, PopoverController } from 'ionic-angular';
+import { LoadingController, PopoverController, ModalController, ViewController } from 'ionic-angular';
 import { Injectable } from '@angular/core';
 
+@Injectable()
 export class JLoadingBar{
 
     private loading: any;
@@ -41,7 +42,21 @@ export class JPopOver{
     }
 }
 
+@Injectable()
 export class JModal{
     private modal:any;
- 
+
+    constructor(public modalCtrl: ModalController, public viewCtrl: ViewController)
+    {
+
+    }
+
+    showModal(component:any, data:any){
+        this.modal = this.modalCtrl.create(component, {data:data});
+        this.modal.present();
+    }
+
+    closeModal(){
+        this.viewCtrl.dismiss();
+    }
 }
