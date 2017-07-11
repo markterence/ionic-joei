@@ -23,6 +23,9 @@ export class ApiServiceProvider {
   //private SERVER_TOKEN = '!JJJJcheetah8888';
 
   private PROJECT_ENDPOINT = this.SERVER_ADDRESS + 'projects/?user_id=%1$s&deviceid=%2$s&session_key=%3$s';
+  
+  private TEST_ENDPOINT = 'http://localhost/mock/mock/description.txt';
+  
   constructor(public http: Http) {
     this.http = http;
     console.log('Hello ApiServiceProvider Provider');
@@ -56,5 +59,10 @@ export class ApiServiceProvider {
   }
   public makeDataUrl(user_id:String, device_id: String, session_key: String): string{
     return sprintf(this.PROJECT_ENDPOINT, user_id, device_id, session_key);
+  }
+
+  //== Test: Get Description txt file
+  public getTestDesc(){
+    return this.http.get(this.proxyfi(this.TEST_ENDPOINT)).map(res=>res.text());
   }
 }
