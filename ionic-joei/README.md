@@ -12,7 +12,8 @@ this generates a page
 - https://gonehybrid.com/build-your-first-mobile-app-with-ionic-2-angular-2-part-6/
 - http://blog.ionic.io/layout-the-cool-way-using-the-ionic-2-grid-component/
 - http://www.gajotres.net/ionic-2-making-rest-http-requests-like-a-pro/
-
+- http://coenraets.org/blog/2017/04/dreamhouse-sample-application-ionic3-angular4/
+- http://mcgivery.com/understanding-ionic-2-class/
 # creating providers
 `ionic g provider <provider_name>`
 The ionic CLI will create a new folder in the project ```src\provider\```   

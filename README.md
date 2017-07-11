@@ -12,8 +12,11 @@ this generates a page
 - http://www.9lessons.info/2017/01/ionic-2-mobile-app-using-angular-2-and.html
 - https://scotch.io/tutorials/build-a-mobile-app-with-angular-2-and-ionic-2
 - https://gonehybrid.com/build-your-first-mobile-app-with-ionic-2-angular-2-part-6/
+- http://blog.ionic.io/layout-the-cool-way-using-the-ionic-2-grid-component/
+- http://www.gajotres.net/ionic-2-making-rest-http-requests-like-a-pro/
+- http://coenraets.org/blog/2017/04/dreamhouse-sample-application-ionic3-angular4/
 - http://mcgivery.com/understanding-ionic-2-class/
-- 
+- https://github.com/dreamhouseapp/dreamhouse-mobile-ionic
 
 # creating providers
 `ionic g provider <provider_name>`
