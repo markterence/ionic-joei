@@ -5,7 +5,9 @@ import { NavController, NavParams, ActionSheetController,
 import { JPopOver } from '../../include/pop-up';
 import { PopoverPage } from "../popover/popover";
 
-
+//import { StringUtils } from "../../include/string-utils";
+import { ApiServiceProvider } from "../../providers/api-service/api-service";
+//import * as limit_str from 'string-utils';
 /**
  * Generated class for the ProjectDetailsPage page.
  *
@@ -21,9 +23,12 @@ export class ProjectDetailsPage {
   
   jpopOver: JPopOver;
 
+  testDesc: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public actionSheetCtrl: ActionSheetController,
-    public popOverCtrl: PopoverController
+    public popOverCtrl: PopoverController,
+    public api: ApiServiceProvider
     ) {
     
     this.selectedItem = navParams.get('project');
@@ -31,7 +36,20 @@ export class ProjectDetailsPage {
 
     //initialize PopoverController
     this.jpopOver = new JPopOver(popOverCtrl);  
+ 
+    //this is a test: get Description
+    this.api.getTestDesc().subscribe(
+      res  => {
+        this.testDesc = res;
+      } 
+    );
+    console.log(this.testDesc);
+}
+
+  trimWords(str,count){
+    return this.testDesc.substr(0,count);
   }
+  
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProjectDetailsPage');
   }

@@ -11,29 +11,64 @@
     </button>
     <ion-title>{{selectedItem.project_name}} Details </ion-title>
 
- 
+    
      <ion-buttons end>
       <button ion-button icon-only (click)="openPopover($event)">
         <ion-icon name="md-more"></ion-icon>
       </button>
-      
     </ion-buttons>
  
   </ion-navbar>
 </ion-header>
 
 <ion-content>
+    <!--
+      end date
+      start date
+      budget
+      description
+      objectives
+      proj_manager: id
+      proj_sponsor: id
+      members: array[
+      ]
+      resources: array[
+        id,
+        quantity
+      ]
+      task: array[
+        task id
+        proj id
+        parent task
+        taskname
+        end date
+        start date
+        budget
+        duration
+        description
+        person responsible:id
+        task resources: ???
+      ]
 
-  <ion-card *ngIf="selectedItem" ion-item>
+    -->
+  <ion-card *ngIf="selectedItem && testDesc" ion-item>
     <ion-card-header>
       {{selectedItem.project_name}}
     </ion-card-header>
     <ion-card-content>
-      <span text-wrap>
+      <p text-wrap text-justify>
       You navigated here from <b>{{selectedItem.description}}</b>
-      </span>
+      {{testDesc}}
+      </p>
+    </ion-card-content>
+    
+    <!--Objectives -->
+    <ion-card-header>Objectives</ion-card-header>
+    <ion-card-content >
+      <p text-wrap text-justify>{{trimWords(testDesc,50)}} </p>
     </ion-card-content>
 
+    <!--  -->
     <ion-list>
       <h1 *ngIf="selectedItem">
         
