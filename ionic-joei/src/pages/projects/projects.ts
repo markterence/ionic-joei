@@ -3,10 +3,9 @@ import { NavController, NavParams } from 'ionic-angular';
 
 
 //import Api Service Providers
-import {ApiServiceProvider} from '../../providers/api-service/api-service';
-import {ProjectDetailsPage} from '../project-details/project-details';
+import { ApiServiceProvider } from '../../providers/api-service/api-service';
+import { ProjectDetailsPage } from '../project-details/project-details';
 import { JLoadingBar } from '../../include/pop-up';
-import { LoadingController } from 'ionic-angular';
 
 /**
  * Generated class for the ProjectsPage page.
@@ -21,17 +20,14 @@ import 'rxjs/add/operator/map';
 })
 export class ProjectsPage {
   projectsDataLists: any;
-  jLoadingBar: JLoadingBar;
-
 
   msg : any = "this is projects page add projects lists here";
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, 
     public api: ApiServiceProvider,
-    public loadingCtrl: LoadingController) {
-      
-      this.jLoadingBar = new JLoadingBar(loadingCtrl);
+    public jLoadingBar: JLoadingBar) {
+
   }
    
 
