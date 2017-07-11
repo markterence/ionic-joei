@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 import {sprintf} from "sprintf-js";
 
 import { ApiUtils } from "../../util/api-util";
-import GlobalVars from "../../util/constants";
+import GlobalVars from "../config";
 /*
   Generated class for the ProjmgmtServiceProvider provider.
 
