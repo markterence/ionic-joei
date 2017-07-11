@@ -7,6 +7,8 @@ import { IonicPage, NavController, NavParams,
 import { ProjectFormPage } from "../project-form/project-form";
 import { ProjectModalPage } from "../project-modal/project-modal";
 
+
+import { JPopOver } from "../../include/pop-up";
 /**
  * Generated class for the PopoverPage page.
  *
@@ -26,7 +28,8 @@ export class PopoverPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public modalCtrl: ModalController,
-    public viewCtrl: ViewController) {
+    public viewCtrl: ViewController,
+    public popOver: JPopOver) {
     
     this.selectedItem = navParams.get("item");
     
@@ -59,6 +62,7 @@ export class PopoverPage {
       default:
         break;
     }
+    this.popOver.dismissPopover();
   }
   
 }
