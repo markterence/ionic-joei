@@ -65,4 +65,21 @@ export class ApiServiceProvider {
   public getTestDesc(){
     return this.http.get(this.proxyfi(this.TEST_ENDPOINT)).map(res=>res.text());
   }
+
+  public getRequest(url, requiredParams, optionalParams?){
+    if(typeof(requiredParams)==='undefined') requiredParams = {};
+    if(typeof(optionalParams)==='undefined') optionalParams = {};
+
+    let parameters = Object.assign(optionalParams, requiredParams);
+    let params = new URLSearchParams();
+    
+    for(var key in parameters){
+      params.set(key, parameters[key]);
+      console.log("Key: "+ key + " + Param: " + parameters[key] );
+    }
+
+    console.log(url + "?" +{search: params});
+
+  }
 }
+
