@@ -22,7 +22,7 @@ import { ProjectFormPage } from "../pages/project-form/project-form";
 import { ProjectModalPage } from "../pages/project-modal/project-modal";
 
 //Test
-import { JPopOver } from "../include/pop-up";
+import {JLoadingBar, JPopOver } from "../include/pop-up";
 @NgModule({
   declarations: [
     MyApp,
@@ -58,7 +58,7 @@ import { JPopOver } from "../include/pop-up";
     //provided by `ionic g provider` command
     ApiServiceProvider,
     
-    JPopOver
+    JPopOver,JLoadingBar
   ]
 })
 export class AppModule {}
