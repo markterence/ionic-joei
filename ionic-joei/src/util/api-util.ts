@@ -75,7 +75,7 @@ export class ApiUtils{
         return this.http.delete(url, parameter).map(resp => resp.json());
     }
 
-    // Normalize a parameters into object
+    // Normalize parameters into object
     private normalizeParameters(requiredParams, optionalParams){
         if(typeof(optionalParams) === 'undefined') optionalParams = {};
         if(typeof(requiredParams) === 'undefined') requiredParams = {};
@@ -102,7 +102,7 @@ export class ApiUtils{
     public transformRequest(obj) {
         var str = [];
         for(var p in obj)
-        str.push(encodeURIComponent(p) + "=" + this.escapeSpecialCharacters(obj[p]));
+            str.push(encodeURIComponent(p) + "=" + this.escapeSpecialCharacters(obj[p]));
         console.log(str.join('&'));
         return str.join('&');
     }
