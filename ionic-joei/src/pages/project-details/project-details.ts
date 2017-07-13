@@ -7,7 +7,8 @@ import { PopoverPage } from "../popover/popover";
 
 //import { StringUtils } from "../../include/string-utils";
 import { ApiServiceProvider } from "../../providers/api-service/api-service";
-//import * as limit_str from 'string-utils';
+import limit_str from '../../util/string-utils';
+
 /**
  * Generated class for the ProjectDetailsPage page.
  *
