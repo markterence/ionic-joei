@@ -17,6 +17,10 @@ this generates a page
 - http://coenraets.org/blog/2017/04/dreamhouse-sample-application-ionic3-angular4/
 - http://mcgivery.com/understanding-ionic-2-class/
 - https://github.com/dreamhouseapp/dreamhouse-mobile-ionic
+- http://angularcode.com/demo-of-a-simple-crud-restful-php-service-used-with-angularjs-and-mysql/
+- https://www.joshmorony.com/an-in-depth-look-at-the-grid-system-in-ionic-2/  
+Rapid Prototyping with Ionic 2 and Node.js – Part 2  
+- https://devdactic.com/prototyping-ionic-2-nodejs-2/
 
 # creating providers
 `ionic g provider <provider_name>`
