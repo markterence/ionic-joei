@@ -7,6 +7,8 @@ import { ApiServiceProvider } from '../../providers/api-service/api-service';
 import { ProjectDetailsPage } from '../project-details/project-details';
 import { JLoadingBar } from '../../include/pop-up';
 
+import { ProjmgmtServiceProvider } from "../../providers/projmgmt-service/projmgmt-service";
+
 /**
  * Generated class for the ProjectsPage page.
  *
@@ -25,7 +27,7 @@ export class ProjectsPage {
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, 
-    public api: ApiServiceProvider,
+    public api: ApiServiceProvider, public api2: ProjmgmtServiceProvider, 
     public jLoadingBar: JLoadingBar) {
 
   }
@@ -46,7 +48,7 @@ export class ProjectsPage {
   }
 
   getProjects(){
-    this.api.getProjectLists("5","123","e1ed60c899b46e9cb0ea25be88145f17").subscribe(
+    this.api2.getProjects("5","123","e1ed60c899b46e9cb0ea25be88145f17").subscribe(
       res  => {
         console.log(res);
         this.projectsDataLists = res.data;

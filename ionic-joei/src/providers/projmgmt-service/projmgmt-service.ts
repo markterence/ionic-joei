@@ -6,7 +6,7 @@ import {sprintf} from "sprintf-js";
 
 import { ApiUtils } from "../../util/api-util";
 import GlobalVars from "../config";
-import ApiEndpoint from "../api-endpoints";
+import * as ApiEndpoint from "../api-endpoints";
 
 /*
   Generated class for the ProjmgmtServiceProvider provider.

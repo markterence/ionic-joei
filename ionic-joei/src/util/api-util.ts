@@ -19,7 +19,8 @@ export class ApiUtils{
     useProxy:boolean;
 
     constructor(public http:Http)
-    { 
+    {
+        this.useProxy = true;
     }   
 
     //DRY DRY DRY

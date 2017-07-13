@@ -23,7 +23,10 @@ import { ProjectModalPage } from "../pages/project-modal/project-modal";
 
 //Test
 import {JLoadingBar, JPopOver } from "../include/pop-up";
+
+
 import { ProjmgmtServiceProvider } from '../providers/projmgmt-service/projmgmt-service';
+import { ApiUtils } from "../util/api-util";
 @NgModule({
   declarations: [
     MyApp,
@@ -60,7 +63,7 @@ import { ProjmgmtServiceProvider } from '../providers/projmgmt-service/projmgmt-
     ApiServiceProvider,
     
     JPopOver,JLoadingBar,
-    ProjmgmtServiceProvider
+    ProjmgmtServiceProvider, ApiUtils
   ]
 })
 export class AppModule {}
