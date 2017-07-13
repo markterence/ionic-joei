@@ -6,6 +6,8 @@ import {sprintf} from "sprintf-js";
 
 import { ApiUtils } from "../../util/api-util";
 import GlobalVars from "../config";
+import ApiEndpoint from "../api-endpoints";
+
 /*
   Generated class for the ProjmgmtServiceProvider provider.
 
@@ -15,8 +17,10 @@ import GlobalVars from "../config";
 @Injectable()
 export class ProjmgmtServiceProvider {
 
-  constructor(public http: Http, public api:ApiUtils) {
+  constructor(public http: Http, public apiUtil:ApiUtils) {
     console.log('Hello ProjmgmtServiceProvider Provider');
+
+    // this.getProjects().subscribe((data) => {});
   }
 
   public getProjects(user_id, deviceid, session_key){
@@ -28,9 +32,7 @@ export class ProjmgmtServiceProvider {
     params.set('deviceid', deviceid);
     params.set('session_key', session_key);
     
-    this.api.Get(GlobalVars.PROJECT_ENDPOINT, params).subscribe((data) => {
-      
-    });
+    return this.apiUtil.Get(ApiEndpoint.PROJECT_ENDPOINT, params);
   }
 
 }
