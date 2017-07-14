@@ -20,8 +20,9 @@ this generates a page
 - http://angularcode.com/demo-of-a-simple-crud-restful-php-service-used-with-angularjs-and-mysql/
 - https://www.joshmorony.com/an-in-depth-look-at-the-grid-system-in-ionic-2/  
 Rapid Prototyping with Ionic 2 and Node.js – Part 2  
-- https://devdactic.com/prototyping-ionic-2-nodejs-2/
-
+- https://devdactic.com/prototyping-ionic-2-nodejs-2/  
+- https://stackoverflow.com/a/37292510
+- http://blog.ionic.io/twitter-app-ionic-2/
 # creating providers
 `ionic g provider <provider_name>`
 The ionic CLI will create a new folder in the project ```src\provider\```   
