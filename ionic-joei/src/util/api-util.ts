@@ -27,50 +27,73 @@ export class ApiUtils{
     //Get Request
     public Get(url, requiredParams, optionalParams?)
     {   
-        if(this.useProxy) Proxyfi(url);
-
+        
+        //combine the parameters, no string escaping magic here.
         let parameter = this.normalizeParameters(optionalParams, requiredParams);
 
         let params = new URLSearchParams();
         for(var key in parameter){
-            params.set(key, parameter[key]);
+            // (key == 'params') ? this.escapeSpecialCharacters(parameter[key]) : 
+            params.set(key,parameter[key]);
         }
-
-        return this.http.get(url, params.toString()).map(resp => resp.json());
+        
+        /*
+            Request Options
+            -url
+            -method ::RequestMethod
+            -params ::URLSearchParams
+            -header ::Headers
+            -body
+        */
+        // let headers = new Headers();
+        // let options = new RequestOptions();
+        // options.params = params;
+        
+        if(parameter !== {})
+          url = this.makeDataUrl(url, parameter);
+     
+        if(this.useProxy) url = Proxyfi(url);
+        
+        console.log(parameter);
+        //console.log(options);
+        console.log("ApiUtils::GET->" + url);
+        return this.http.get(url, parameter).map(resp => resp.json());
     }
 
     //Post Request
     public Post(url, requiredParams, optionalParams?){
-        if(this.useProxy) Proxyfi(url);
-
         let parameter = this.normalizeParameters(optionalParams, requiredParams);
 
         if(parameter !== {})
             url = this.makeDataUrl(url, parameter);
+
+        if(this.useProxy) url = Proxyfi(url);
 
         //TODO: header
         return this.http.post(url, parameter).map(resp => resp.json());
     }
 
     public Put(url, requiredParams, optionalParams?){
-        if(this.useProxy) Proxyfi(url);
 
         let parameter = this.normalizeParameters(optionalParams, requiredParams);
         
         if(parameter !== {})
             url = this.makeDataUrl(url, parameter);
 
+        if(this.useProxy) url = Proxyfi(url);
+
         //TODO: header
         return this.http.put(url, parameter).map(resp => resp.json());
     }
 
     public Delete(url, requiredParams, optionalParams?){
-        if(this.useProxy) Proxyfi(url);
-
+    
         let parameter = this.normalizeParameters(optionalParams, requiredParams);
 
         if(parameter !== {})
             url = this.makeDataUrl(url, parameter);
+
+        if(this.useProxy) url = Proxyfi(url);
 
         //TODO: header
         return this.http.delete(url, parameter).map(resp => resp.json());

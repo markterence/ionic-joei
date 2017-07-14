@@ -27,12 +27,19 @@ export class ProjmgmtServiceProvider {
     //let url = this.proxyfi(this.makeDataUrl(user_id, device_id, session_key));
     //return this.http.get(url).map(this.extractData);
     //user_id, deviceid, session_key
-    let params = new URLSearchParams();
-    params.set('user_id', user_id);
-    params.set('deviceid', deviceid);
-    params.set('session_key', session_key);
-    
-    return this.apiUtil.Get(ApiEndpoint.PROJECT_ENDPOINT, params);
+
+    let requestParams = {
+    'user_id': user_id,
+    'deviceid': deviceid,
+    'session_key': session_key
+    }
+ 
+    console.log("projmgmt-services::getProjects");
+    console.log(requestParams);
+    console.log("projmgmt-services::end");
+ 
+    return this.apiUtil.Get(ApiEndpoint.PROJECT_ENDPOINT, 
+      requestParams);
   }
 
 }
