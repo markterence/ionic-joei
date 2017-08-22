@@ -37,9 +37,36 @@ export class ProjmgmtServiceProvider {
     console.log("projmgmt-services::getProjects");
     console.log(requestParams);
     console.log("projmgmt-services::end");
- 
+    
+    let header = new Headers();
+    header.set("Origin","localhost");
+
     return this.apiUtil.Get(ApiEndpoint.PROJECT_ENDPOINT, 
-      requestParams);
+      {
+        params:requestParams
+      },
+      {
+        body:{data:"data"},
+        headers: header
+      }
+    );
   }
+
+  public createProject(user_id, deviceid, session_key){
+    let requiredParams = {
+      'user_id': user_id,
+      'deviceid': deviceid,
+      'session_key': session_key,
+      'json':{
+        'project_name': 're:joei'
+      }
+    };
+    
+    return this.apiUtil.Post(ApiEndpoint.PROJECT_ENDPOINT, 
+      {
+        params: requiredParams
+      });
+  }
+
 
 }

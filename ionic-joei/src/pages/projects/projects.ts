@@ -60,6 +60,10 @@ export class ProjectsPage {
         this.msg = "Error Loading Projects";
       }
     );
+
+    this.api2.createProject("5","123","e1ed60c899b46e9cb0ea25be88145f17").subscribe(res => {
+      console.log(res);
+    });
   }
 
 }

@@ -15,16 +15,18 @@ import { Proxyfi } from "./proxyfi";
 
 @Injectable()
 export class ApiUtils{
+    public TAG: string = "ApiUtils";
 
     useProxy:boolean;
 
     constructor(public http:Http)
     {
-        this.useProxy = true;
+        this.useProxy = false;
     }   
 
     //DRY DRY DRY
     //Get Request
+    //put data on 2nd param, and body, header etc on 3rd param or use just use 2nd param
     public Get(url, requiredParams, optionalParams?)
     {   
         
@@ -49,10 +51,10 @@ export class ApiUtils{
         // let options = new RequestOptions();
         // options.params = params;
         
-        if(parameter !== {})
-          url = this.makeDataUrl(url, parameter);
+        // if(parameter !== {})
+        //   url = this.makeDataUrl(url, parameter);
      
-        if(this.useProxy) url = Proxyfi(url);
+        // if(this.useProxy) url = Proxyfi(url);
         
         console.log(parameter);
         //console.log(options);
@@ -64,12 +66,14 @@ export class ApiUtils{
     public Post(url, requiredParams, optionalParams?){
         let parameter = this.normalizeParameters(optionalParams, requiredParams);
 
-        if(parameter !== {})
-            url = this.makeDataUrl(url, parameter);
+         //if(parameter !== {})
+         //    url = this.makeDataUrl(url, parameter);
 
-        if(this.useProxy) url = Proxyfi(url);
+        // if(this.useProxy) url = Proxyfi(url);
 
         //TODO: header
+        console.log(this.TAG + "::POST-> " + url);
+        console.log(parameter);
         return this.http.post(url, parameter).map(resp => resp.json());
     }
 
