@@ -1,7 +1,8 @@
 go to [dev branch](https://github.com/markterence/ionic-joei/tree/dev)  
 
 # ionic-joei
-A ~~chemical~~ bond formed by the electrostatic attraction of oppositely charged ~~ions~~ feelings.
+A ~~chemical~~ bond formed by the electrostatic attraction of oppositely charged ~~ions~~ feelings.  
+A sample ionic rest client application.
 
 # ionic info
 `$>ionic g page <page_name>`  
@@ -27,17 +28,29 @@ Rapid Prototyping with Ionic 2 and Node.js – Part 2
 `ionic g provider <provider_name>`
 The ionic CLI will create a new folder in the project ```src\provider\```   
 
-# Dealing with CORS
-During testing, Javascript is not allowed to consume web page served from different origin.  
-So I used a proxy script written in PHP to read the api outside the domain.  
-**Simple Proxy Script** - https://gist.github.com/iovar/9091078
-**Usage**
+# Dealing with CORS #
+Use a proxy.  
+To configure the your Ionic App to use a proxy server.  
+Define the `proxies` inside `ionic.config.json`  
 ```
+{
+  "name": "ionic-joei",
+  "app_id": "",
+  "type": "ionic-angular",
+  "proxies":[{
+	  "path":"/api",
+	  "proxyUrl":"http://192.168.1.23:8888/api"
+  }]
+}
+```
+
+~~During testing, Javascript is not allowed to consume web page served from different origin.  
+So I used a proxy script written in PHP to read the api outside the domain.~~  
+**~~Simple Proxy Script~~** 
+- https://gist.github.com/iovar/9091078 
+
+**~~Usage~~**  
+~~`
 proxy.php?url=<url_encoded_uri>
 localhost/proxy.php?url="api.cors-disabled.com%2F%3Fsearch%3Dcors%26ref%3Dweb
-```
-
-|Table Test # | Header2 # |
-|--- |:---:|
-|ragsekemnmn|hello aewaskj|
-
+`~~
