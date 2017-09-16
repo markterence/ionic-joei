@@ -47,7 +47,8 @@ export class ApiUtils{
             -header ::Headers
             -body
         */
-        // let headers = new Headers();
+        let headers = new Headers();
+        headers.set("Content-Type","application/x-www-form-urlencoded");
         // let options = new RequestOptions();
         // options.params = params;
         
